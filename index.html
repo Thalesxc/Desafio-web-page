@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <title>Desafio webpage</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="menu">
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#form">Formulario</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home">
+        <h2>Pagina Web Desafio</h2>
+        <p>Essa página web foi feita usando Hmtl CSS e Javascript com o proposito de testar 
+        habilidades das ferramentas mencionadas na criação de uma pagina com um menu de navegação de ancora, contendo 2 seções e um footer, 
+        além de um formulário com validações em certos campos, como cpf, cpnj e email, além de auto completar o campo de CEP.</p>
+    </section>
+
+    <section id="form">
+        <h1>Formulario</h1>
+        <form id="formulario">
+            <label for="nome">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telephone" name="telephone">
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj">
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="address" name="address" required readonly>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer id="contato" class="footer-content">
+        <h3>Desenvolvido por:</h3>
+        <p>Thales Xavier</p>
+        <h4>Contato:</h4>
+        <p>thalescaceres@gmail.com</p>
+    </footer>
+</body>
+</html>
