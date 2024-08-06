@@ -52,7 +52,6 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-
     form.submit();
 });
 
@@ -89,3 +88,30 @@ function isEmailValid(email) {
 
     return false;
 }
+
+cepInput.addEventListener('focusout', async () => {
+    try {
+        const onlyNumbers = /^[0-9]+$/;
+        const cepValid = /^[0-9]{8}$/;	
+
+        if (!onlyNumbers.test(cepInput.value) || !cepValid.test(cepInput.value)) {
+            throw new Error("CEP invalido");
+        }
+
+    const response = await fetch(`https://viacep.com.br/ws/${cepInput.value}/json/`);
+
+    if (!response.ok) {
+        throw await response.json();
+    }
+
+    const responseCep = await response.json();
+    addressInput.value = responseCep.logradouro;
+    neighborhoodInput.value = responseCep.bairro;
+    cityInput.value = responseCep.localidade;
+
+    } catch (error) {
+        if (error.message === "CEP invalido") {
+            alert("CEP invalido");
+        }
+    }
+});
